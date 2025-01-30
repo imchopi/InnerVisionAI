@@ -1,0 +1,51 @@
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Mantiene el contenedor en el centro */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.access-button {
+    --border-width: 0px; /* Elimina el borde nativo */
+    width: 100%;
+    max-width: 120px;
+    height: 50px;
+    border: 2px solid #007bff; /* Azul */
+    color: #007bff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Hover */
+.access-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #007bff;
+}
+
+/* Efecto de clic */
+.access-button:active {
+    transform: scale(0.95);
+}
