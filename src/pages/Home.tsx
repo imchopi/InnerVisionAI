@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import {IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import './Home.css';
-import {cameraOutline} from "ionicons/icons";
 
 const Home: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -34,9 +33,6 @@ const Home: React.FC = () => {
             <IonContent fullscreen>
                 <div className="video-container">
                     <video ref={videoRef} autoPlay playsInline></video>
-                    <IonButton className="camera-button" shape="round">
-                        <IonIcon icon={cameraOutline}/>
-                    </IonButton>
                 </div>
             </IonContent>
         </IonPage>
