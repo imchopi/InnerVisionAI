@@ -1,7 +1,10 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import {IonApp, IonHeader, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Chatbot from './pages/Chatbot';
+import Docs from './pages/Docs';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,22 +35,39 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+    <IonApp>
+      <IonReactRouter>
+        {/* Navbar global */}
+        <IonHeader>
+          <Navbar />
+        </IonHeader>
+
+        <IonRouterOutlet>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/aboutus">
+            <AboutUs />
+          </Route>
+          <Route exact path="/chatbot">
+            <Chatbot />
+          </Route>
+          <Route exact path="/docs">
+            <Docs />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
 );
 
 export default App;

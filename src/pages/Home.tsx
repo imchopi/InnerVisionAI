@@ -1,24 +1,23 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import {IonContent, IonPage} from '@ionic/react';
 import './Home.css';
+import React from "react";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
-      </IonContent>
-    </IonPage>
+      <IonPage>
+          <IonContent className="page-container" fullscreen>
+              <div className="main-content">
+                  <div className="hero">
+                      <h1>Bienvenidos a InnerVision</h1>
+                      <p>Descubre el futuro de la inteligencia artificial aplicada a la visión.</p>
+                  </div>
+              </div>
+
+              {/* Footer */}
+              <Footer />
+          </IonContent>
+      </IonPage>
   );
 };
 
