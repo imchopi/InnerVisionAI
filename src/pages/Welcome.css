@@ -1,0 +1,218 @@
+:root {
+    --ion-background-color: #121212;
+    --ion-text-color: #ffffff;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.icon-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.info-icon {
+    font-size: 32px;
+    color: #007bff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.info-icon:hover {
+    transform: scale(1.1);
+}
+
+.info-icon:active{
+    transform: scale(0.9);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Mantiene el contenedor en el centro */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-label {
+    align-self: flex-start;
+    color: #ffffff;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #373737;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.form-input:focus {
+    background-color: #4a4a4a;
+}
+
+.password-container {
+    width: 100%;
+    position: relative;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.access-button {
+    --border-width: 0px; /* Elimina el borde nativo */
+    width: 100%;
+    max-width: 120px;
+    height: 50px;
+    border: 2px solid #007bff; /* Azul */
+    color: #007bff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.access-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #007bff;
+}
+
+.access-button:active {
+    transform: scale(0.95);
+}
+
+.register-label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.register-label:hover {
+    color: #007bff;
+}
+
+/* Modal */
+.custom-modal {
+    --width: 400px;
+    --height: 500px;
+    --border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1px);
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-title {
+    color: white;
+    margin: 8px 0;
+}
+
+.modal-content .form-label {
+    align-self: flex-start;
+    color: #ffffff;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.modal-content .form-input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #373737;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.register-button {
+    --border-width: 0px; /* Elimina el borde nativo */
+    width: 100%;
+    max-width: 150px;
+    height: 50px;
+    border: 2px solid #007bff; /* Azul */
+    color: #007bff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.register-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #007bff;
+}
+
+.register-button:active {
+    transform: scale(0.95);
+}
