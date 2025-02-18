@@ -2,9 +2,11 @@ import { Redirect, Route } from 'react-router-dom';
 import {IonApp, IonHeader, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import Model from "./pages/Model";
 import AboutUs from './pages/AboutUs';
 import Chatbot from './pages/Chatbot';
 import Docs from './pages/Docs';
+import Navbar from "./components/Navbar";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,8 +38,6 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import React from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 setupIonicReact();
 
@@ -55,6 +55,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/model">
+            <Model />
           </Route>
           <Route exact path="/aboutus">
             <AboutUs />

@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
             <IonTitle className="logo">InnerVision</IonTitle>
             <div className="nav-buttons">
                 <IonButton className="nav-button" routerLink="/">Inicio</IonButton>
+                <IonButton className="nav-button" routerLink="/model">Modelo</IonButton>
                 <IonButton className="nav-button" routerLink="/aboutus">Sobre nosotros</IonButton>
                 <IonButton className="nav-button" routerLink="/chatbot">Chatbot</IonButton>
                 <IonButton className="nav-button" routerLink="/docs">Docs</IonButton>
