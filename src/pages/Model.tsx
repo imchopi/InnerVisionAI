@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { io } from "socket.io-client"; // Importa WebSockets
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Home.css';
+import './Model.css';
 import { Capacitor } from '@capacitor/core';
 import { StatusBar } from '@capacitor/status-bar';
 

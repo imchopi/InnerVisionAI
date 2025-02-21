@@ -6,9 +6,18 @@ import "./Chatbot.css";
 
 const Chatbot: React.FC = () => {
     // Estado para almacenar los mensajes del chat
-    const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
+    const [messages, setMessages] = useState([
+        { role: "bot", content: "¡Hola! Soy tu asistente virtual! Pregúntame sobre lo que sea acerca de InnerVisionAI." }
+    ]);
     // Estado para manejar el texto del input del usuario
     const [input, setInput] = useState("");
+
+    // Función para formatear la respuesta del chatbot
+    const formatResponse = (response: string) => {
+        return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Negritas a etiquetas HTML
+            .replace(/\n/g, '<br>') // Saltos de línea HTML
+            .replace(/\d+\. /g, '<br>• '); // Números por viñetas
+    };
 
     // Función para manejar el envío de mensajes al chatbot
     const sendMessage = async () => {
@@ -24,8 +33,10 @@ const Chatbot: React.FC = () => {
                 message: input,
             });
 
+            // Formatear la respuesta del chatbot
+            const formattedContent = formatResponse(response.data.response);
             // Agregar la respuesta del chatbot a la lista de mensajes
-            const botMessage = { role: "bot", content: response.data.response };
+            const botMessage = { role: "bot", content: formattedContent };
             setMessages([...messages, userMessage, botMessage]);
         } catch (error){
             console.error("Error al enviar el mensaje al chatbot:", error);
@@ -46,20 +57,25 @@ const Chatbot: React.FC = () => {
                     <div className="chat-container">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.role}`}>
-                                {msg.content}
+                                {msg.role === "bot" ? (
+                                    <div dangerouslySetInnerHTML={{ __html: msg.content }} />
+                                ) : (
+                                    msg.content
+                                )}
                             </div>
                         ))}
                     </div>
 
+                    {/* Input y botón para enviar mensajes */}
                     <div className="input-container">
-                        {/*Input y botón para enviar mensajes*/}
                         <input
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Escribe tu mensaje..."
+                            onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                         />
-                        <button onClick={sendMessage}>Enviar</button>
+                        <button className="send-button" onClick={sendMessage}>Enviar</button>
                     </div>
                 </div>
 
