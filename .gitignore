@@ -24,7 +24,7 @@
 .idea
 
 # Ignorar archivos de entorno en Python
-/InnerVisionAI/src/python/.env  # Solo ese .env
+/InnerVisionAI/src/python/.env
 **/.env  # Todos los .env en cualquier parte del proyecto
 
 npm-debug.log*
