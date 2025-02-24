@@ -1,8 +1,13 @@
-import { Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+
+import { Redirect, Route } from 'react-router-dom';
+import { IonApp, IonHeader, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home'; // Pantalla principal
-import Welcome from './pages/Welcome'; // Pantalla de bienvenida
+import Home from './pages/Home';
+import Model from "./pages/Model";
+import AboutUs from './pages/AboutUs';
+import Chatbot from './pages/Chatbot';
+import Docs from './pages/Docs';
+import Navbar from "./components/Navbar";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,34 +38,40 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import React, {useEffect} from "react";
-import {StatusBar} from "@capacitor/status-bar";
+import React from "react";
 
 setupIonicReact();
 
-const App: React.FC = () => {
-    useEffect(() => {
-        const fixStatusBar = async () => {
-            try {
-                await StatusBar.setOverlaysWebView({ overlay: false }); // Evita solapamiento con la barra de estado
-            } catch (error) {
-                console.error("Error configurando la barra de estado:", error);
-            }
-        };
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      {/* Navbar global */}
+      <IonHeader>
+        <Navbar />
+      </IonHeader>
 
-        fixStatusBar();
-    }, []);
-
-    return (
-        <IonApp>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route exact path="/" component={Welcome} />
-                    <Route exact path="/home" component={Home} />
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </IonApp>
-    );
-};
+      <IonRouterOutlet>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/model">
+          <Model />
+        </Route>
+        <Route exact path="/aboutus">
+          <AboutUs />
+        </Route>
+        <Route exact path="/chatbot">
+          <Chatbot />
+        </Route>
+        <Route exact path="/docs">
+          <Docs />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+);
 
 export default App;

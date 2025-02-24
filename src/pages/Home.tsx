@@ -1,42 +1,22 @@
-import React, { useEffect, useRef } from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import './Home.css';
+import React from "react";
+import Footer from "../components/Footer";
+import { IonContent, IonPage } from '@ionic/react';
 
 const Home: React.FC = () => {
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    useEffect(() => {
-        const startCamera = async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: { facingMode: 'environment' } // Usa la cámara trasera
-                });
-
-                if (videoRef.current) {
-                    videoRef.current.srcObject = stream;
-                }
-            } catch (error) {
-                console.error('Error al acceder a la cámara:', error);
-            }
-        };
-
-        startCamera();
-    }, []);
-
-    return (
-        <IonPage>
-            <IonHeader className="mainHeader">
-                <IonToolbar style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-                    <IonTitle>IVAI - Camera</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent fullscreen>
-                <div className="video-container">
-                    <video ref={videoRef} autoPlay playsInline></video>
-                </div>
-            </IonContent>
-        </IonPage>
-    );
+  return (
+      <IonPage>
+          <IonContent className="page-container" fullscreen>
+              <div className="main-content">
+                  <div className="hero">
+                      <h1>Bienvenidos a InnerVision</h1>
+                      <p>Descubre el futuro de la inteligencia artificial aplicada a la visión.</p>
+                  </div>
+              </div>
+              <Footer />
+          </IonContent>
+      </IonPage>
+  );
 };
 
 export default Home;

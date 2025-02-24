@@ -1,7 +1,5 @@
 {
-  "name": "innervoice",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "InnerVision",
+  "integrations": {},
   "type": "react-vite"
 }
