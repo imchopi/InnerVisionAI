@@ -30,7 +30,7 @@ const Chatbot: React.FC = () => {
 
         try {
             // Enviar el mensaje al backend (servidor en Node.js)
-            const response = await axios.post("https://api-innervisionai.onrender.com/chat", {
+            const response = await axios.post("http://localhost:5000/chat", {
                 message: input,
             });
 
