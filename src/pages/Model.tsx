@@ -13,9 +13,12 @@ const fixStatusBar = async () => {
 };
 fixStatusBar();
 
-
 // Conexión al backend con WebSockets
-const socket = io("http://localhost:5000"); // Cambia a HTTPS en producción
+const BACKEND_URL = "https://api-innervisionai.onrender.com";
+const socket = io(BACKEND_URL, {
+    path: "/socket.io/",  // Asegura que Render maneje correctamente los WebSockets
+    transports: ["websocket", "polling"]
+})
 
 const Model: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -78,7 +81,7 @@ const Model: React.FC = () => {
             }, 'image/jpeg');
 
             // Limitar la tasa de frames a 10 FPS (100ms por frame)
-            setTimeout(sendFrame, 1000);
+            setTimeout(sendFrame, 100);
         };
 
         sendFrame();
