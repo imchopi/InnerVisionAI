@@ -13,15 +13,9 @@ const fixStatusBar = async () => {
 };
 fixStatusBar();
 
+
 // Conexión al backend con WebSockets
-const BACKEND_URL = "wss://api-innervisionai.onrender.com"; // Cambia a wss://
-const socket = io(BACKEND_URL, {
-    path: "/socket.io/",  
-    transports: ["websocket"], // Usar solo WebSocket
-    forceNew: true,           // Fuerza una nueva conexión
-    reconnectionAttempts: 5,  // Intenta reconectar 5 veces antes de fallar
-    timeout: 10000            // Espera 10 segundos antes de timeout
-});
+const socket = io("http://localhost:5000"); // Cambia a HTTPS en producción
 
 const Model: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
