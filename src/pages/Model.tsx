@@ -78,7 +78,7 @@ const Model: React.FC = () => {
             }, 'image/jpeg');
 
             // Limitar la tasa de frames a 10 FPS (100ms por frame)
-            setTimeout(sendFrame, 100);
+            setTimeout(sendFrame, 500);
         };
 
         sendFrame();
