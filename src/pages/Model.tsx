@@ -14,13 +14,13 @@ const fixStatusBar = async () => {
 fixStatusBar();
 
 // Conexión al backend con WebSockets
-const BACKEND_URL = "https://api-innervisionai.onrender.com";
+const BACKEND_URL = "wss://api-innervisionai.onrender.com"; // Cambia a wss://
 const socket = io(BACKEND_URL, {
     path: "/socket.io/",  
-    transports: ["websocket", "polling"],
-    forceNew: true,   // <-- Fuerza una nueva conexión
-    reconnectionAttempts: 5, // <-- Intenta reconectar 5 veces antes de fallar
-    timeout: 10000    // <-- Espera 10 segundos antes de timeout
+    transports: ["websocket"], // Usar solo WebSocket
+    forceNew: true,           // Fuerza una nueva conexión
+    reconnectionAttempts: 5,  // Intenta reconectar 5 veces antes de fallar
+    timeout: 10000            // Espera 10 segundos antes de timeout
 });
 
 const Model: React.FC = () => {
