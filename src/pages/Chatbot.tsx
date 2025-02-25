@@ -4,6 +4,7 @@ import axios from "axios";
 import Footer from "../components/Footer";
 import "./Chatbot.css";
 
+
 const Chatbot: React.FC = () => {
     // Estado para almacenar los mensajes del chat
     const [messages, setMessages] = useState([
