@@ -15,7 +15,7 @@ fixStatusBar();
 
 
 // Conexión al backend con WebSockets
-const socket = io("http://localhost:5000"); // Cambia a HTTPS en producción
+const socket = io("https://api-innervisionai.onrender.com"); // Cambia a HTTPS en producción
 
 const Model: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
