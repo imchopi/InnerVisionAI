@@ -1,5 +1,5 @@
-import {IonPage, IonHeader, IonContent} from "@ionic/react";
-import React, {useState} from "react";
+import { IonPage, IonHeader, IonContent } from "@ionic/react";
+import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../components/Footer";
 import "./Chatbot.css";
@@ -27,9 +27,9 @@ const Chatbot: React.FC = () => {
         const userMessage = { role: "user", content: input };
         setMessages([...messages, userMessage]);
 
-        try{
+        try {
             // Enviar el mensaje al backend (servidor en Node.js)
-            const response = await axios.post("https://api-innervisionai.onrender.com/chat", {
+            const response = await axios.post("http://localhost:5000/chat", {
                 message: input,
             });
 
@@ -38,7 +38,7 @@ const Chatbot: React.FC = () => {
             // Agregar la respuesta del chatbot a la lista de mensajes
             const botMessage = { role: "bot", content: formattedContent };
             setMessages([...messages, userMessage, botMessage]);
-        } catch (error){
+        } catch (error) {
             console.error("Error al enviar el mensaje al chatbot:", error);
         }
 
