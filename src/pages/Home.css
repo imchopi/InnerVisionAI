@@ -1,28 +1,76 @@
-/* Sección principal */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    background-color: white;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    rgba(69, 11, 36, 1) 0%,
+    rgba(20, 8, 48, 1) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  position: relative;
 }
 
-.hero h1 {
-    font-size: 48px;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 70px;
     font-weight: bold;
-    color: black;
+    color: #fe006d;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 30px;
+    color: #d1d1d1;
+    max-width: 600px;
+    line-height: 1.5;
+  }
 }
 
-.hero h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
+.github-links {
+  display: flex;
+  gap: 30px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: gray;
+.github-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 20px;
+  transition: all 0.5s ease; /* Transición suave para todos los cambios */
+}
+
+.github-link:hover {
+  color: #fe006d;
+}
+
+.github-link svg {
+  transition: all 0.5s ease; /* Transición suave para el ícono */
+}
+
+.github-link:hover svg {
+  transform: scale(1.2) rotate(15deg); /* Escala y rotación al pasar el mouse */
+  filter: drop-shadow(0 0 10px rgba(254, 0, 109, 0.7)); /* Sombra neón */
+}
+
+.github-link span {
+  font-size: 40px;
+  transition: all 0.5s ease; /* Transición suave para el texto */
+}
+
+.github-link:hover span {
+  transform: translateY(-10px); /* Mueve el texto hacia arriba */
+  color: #fe006d; /* Cambia el color del texto */
 }

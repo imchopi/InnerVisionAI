@@ -90,29 +90,50 @@ const Model: React.FC = () => {
             const canvas = canvasRef.current;
             const ctx = canvas?.getContext("2d");
             const video = videoRef.current;
-
+    
             if (!canvas || !ctx || !video) return;
-
-            // Asegurarse de que el canvas tenga las mismas dimensiones que el video
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-
+    
+            // Obtener las dimensiones reales del video en la pantalla
+            const videoWidth = video.videoWidth;
+            const videoHeight = video.videoHeight;
+            const displayWidth = video.offsetWidth;
+            const displayHeight = video.offsetHeight;
+    
+            // Calcular el factor de escala y el desplazamiento
+            const scaleX = displayWidth / videoWidth;
+            const scaleY = displayHeight / videoHeight;
+            const offsetX = (displayWidth - videoWidth * scaleX) / 2;
+            const offsetY = (displayHeight - videoHeight * scaleY) / 2;
+    
+            // Asegurarse de que el canvas tenga las mismas dimensiones que el video en la pantalla
+            canvas.width = displayWidth;
+            canvas.height = displayHeight;
+    
             // Limpiar el canvas antes de dibujar las nuevas detecciones
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    
             // Dibujar las detecciones en el canvas
             detections.forEach((detection: { bbox: [number, number, number, number]; class: string; confidence: number }) => {
                 const [x, y, width, height] = detection.bbox;
-                ctx.strokeStyle = "#00FF00";
+    
+                // Escalar las coordenadas de las detecciones
+                const scaledX = x * scaleX + offsetX;
+                const scaledY = y * scaleY + offsetY;
+                const scaledWidth = (width - x) * scaleX;
+                const scaledHeight = (height - y) * scaleY;
+    
+                // Dibujar el rectángulo de detección
+                ctx.strokeStyle = "#FF00FF"; // Morado fucsia
                 ctx.lineWidth = 2;
-                ctx.strokeRect(x, y, width - x, height - y); // Ajustar el ancho y alto
-
-                ctx.fillStyle = "#00FF00";
-                ctx.font = "12px Arial";
-                ctx.fillText(`${detection.class} ${detection.confidence.toFixed(2)}`, x, y - 5);
+                ctx.strokeRect(scaledX, scaledY, scaledWidth, scaledHeight);
+    
+                // Dibujar la etiqueta de la clase y la confianza
+                ctx.fillStyle = "#FF00FF"; // Morado fucsia
+                ctx.font = "30px Arial"; // Tamaño de letra más grande
+                ctx.fillText(`${detection.class} ${detection.confidence.toFixed(2)}`, scaledX, scaledY - 5);
             });
         });
-
+    
         return () => {
             socket.off("detections");
         };
@@ -120,17 +141,12 @@ const Model: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader className="mainHeader">
-                <IonToolbar style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-                    <IonTitle>IVAI - Camera</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent fullscreen>
+            <div className="parent-container">
                 <div className="video-container">
                     <video ref={videoRef} autoPlay playsInline></video>
                     <canvas ref={canvasRef} className="overlay"></canvas>
                 </div>
-            </IonContent>
+            </div>
         </IonPage>
     );
 };

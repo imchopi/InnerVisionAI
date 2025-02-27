@@ -1,14 +1,5 @@
 /* Sección principal */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    background-color: white;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    margin-top: 50px;
-}
+
 
 /* Título del chatbot */
 h2 {

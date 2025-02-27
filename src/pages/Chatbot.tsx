@@ -79,9 +79,6 @@ const Chatbot: React.FC = () => {
                         <button className="send-button" onClick={sendMessage}>Enviar</button>
                     </div>
                 </div>
-
-                {/* Footer */}
-                <Footer />
             </IonContent>
         </IonPage>
     );

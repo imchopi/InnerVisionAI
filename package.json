@@ -12,8 +12,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/android": "^7.0.1",
     "20": "^3.1.9",
+    "@capacitor/android": "^7.0.1",
     "@capacitor/app": "7.0.0",
     "@capacitor/camera": "^7.0.0",
     "@capacitor/core": "7.0.1",
@@ -27,10 +27,11 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.9",
     "ionicons": "^7.0.0",
-    "lucide-react": "^0.474.0",
     "latest": "^0.2.0",
+    "lucide-react": "^0.474.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
     "socket.io-client": "^4.8.1"

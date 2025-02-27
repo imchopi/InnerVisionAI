@@ -1,27 +1,27 @@
-import {IonPage, IonList, IonItem, IonLabel, IonContent, IonHeader} from "@ionic/react";
-import React from "react";
+import { IonPage, IonContent, IonModal, IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon } from "@ionic/react";
+import React, { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Íconos de GitHub y LinkedIn
+import { arrowBack } from "ionicons/icons"; // Ícono de flecha para volver atrás
 import "./AboutUs.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const teamMembers = [
     {
         name: "Carlos López Muñoz",
-        role: "___",
+        role: "Desarrollador de IA y Big Data",
         master: "Inteligencia Artificial y Big Data",
         github: "#",
         linkedin: "#",
     },
     {
         name: "Adrián Perogil Fernández",
-        role: "___",
+        role: "Desarrollador de IA y Big Data",
         master: "Inteligencia Artificial y Big Data",
         github: "#",
         linkedin: "#",
     },
     {
         name: "Alejandro Fernández Barrionuevo",
-        role: "___",
+        role: "Desarrollador de IA y Big Data",
         master: "Inteligencia Artificial y Big Data",
         github: "#",
         linkedin: "#",
@@ -29,32 +29,58 @@ const teamMembers = [
 ];
 
 const AboutUs: React.FC = () => {
+    const [selectedMember, setSelectedMember] = useState(null); // Estado para el miembro seleccionado
+    const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
+
+    // Función para abrir el modal con la información del miembro
+    const openModal = (member) => {
+        setSelectedMember(member);
+        setIsModalOpen(true);
+    };
+
+    // Función para cerrar el modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedMember(null);
+    };
+
     return (
         <IonPage>
             <IonContent className="page-container" fullscreen>
-                <div className="main-content">
+                <div className="main-content-about">
                     <div className="hero">
                         <h2>Equipo del Proyecto</h2>
-                        <IonList lines="none">
-                            {teamMembers.map((member, index) => (
-                                <IonItem className="item-member" key={index}>
-                                    <IonLabel>
-                                        <h3>{member.name}</h3>
-                                        <p><strong>Puesto:</strong> {member.role}</p>
-                                        <p><strong>Máster:</strong> {member.master}</p>
-                                        <div className="social-links">
-                                            <a href={member.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                        </div>
-                                    </IonLabel>
-                                </IonItem>
-                            ))}
-                        </IonList>
+                    </div>
+                    <div className="team-grid">
+                        {teamMembers.map((member, index) => (
+                            <div className="team-member" key={index} onClick={() => openModal(member)}>
+                                <h3>{member.name}</h3>
+                                <p>
+                                    {member.role}
+                                </p>
+                                <p>
+                                    {member.master}
+                                </p>
+                                <div className="social-links">
+                                    <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <FaGithub />
+                                    </a>
+                                    <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <FaLinkedin />
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
-
-                {/* Footer */}
-                <Footer />
             </IonContent>
         </IonPage>
     );

@@ -1,9 +1,23 @@
+.parent-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background: linear-gradient(
+        0deg,
+        rgba(69, 11, 36, 1) 0%,
+        rgba(20, 8, 48, 1) 50%,
+        rgb(0, 0, 0) 100%
+      );
+}
+
 /* Contenedor principal */
 .video-container {
     position: relative;
-    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-    height: 100vh; /* Ocupa el 100% del alto de la ventana */
-    overflow: hidden;
+    width: 1200px; /* Tamaño fijo para el cuadrado */
+    height: 70%; /* Tamaño fijo para el cuadrado */
+    margin: 0 auto; /* Centrar el contenedor */
+    border: 2px solid #882b9b; /* Opcional: borde para visualizar el cuadrado */
 }
 
 /* Video y canvas */
@@ -11,9 +25,9 @@ video, canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+    width: 100%; /* Ajustar al tamaño del contenedor */
+    height: 100%; /* Ajustar al tamaño del contenedor */
+    object-fit: cover; /* Asegurar que el video cubra el área sin distorsión */
 }
 
 /* Canvas (superpuesto sobre el video) */

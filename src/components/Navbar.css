@@ -1,43 +1,64 @@
-/* Estilo general */
 .navbar {
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 2 22px 22px rgba(149, 7, 192, 0.3);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 60px; /* Ajusta según la altura del Navbar */
-    background-color: black;
-    color: #f3f3f3;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 44px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(254, 0, 109, 0.7);
+  }
+  
+  .nav-buttons {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px 30px;
     gap: 20px;
-    z-index: 1000; /* Asegura que quede por encima del resto del contenido */
-}
-
-/* Estilo del título/logo */
-.logo {
-    font-size: 22px;
-    color: white;
-}
-
-/* Botones de navegación */
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-button {
-    --background: transparent; /* Hace que el botón no tenga fondo */
-    --color: white; /* Color del texto por defecto */
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: none;
-    transition: color 0.3s ease;
+  }
+  
+  .nav-button {
+    --background: transparent; /* Fondo transparente */
+    background: transparent;
+    color: #d1d1d1;
+    border: 2px solid transparent;
     border-radius: 10px;
-}
-
-/* Efecto hover */
-.nav-button:hover {
-    --color: #007bff; /* Azul similar al de la imagen */
-}
+    padding: 10px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255, 255, 255),
+      transparent
+    );
+    transition: all 0.5s ease;
+  }
+  
+  .nav-button:hover {
+    color: #fe006d;
+    border-color: #fe006d;
+    box-shadow: 0 0 10px rgba(254, 0, 109, 0.7);
+  }
+  
+  .nav-button:hover::before {
+    left: 100%;
+  }

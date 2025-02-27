@@ -12,8 +12,6 @@ const Docs: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Footer */}
-                <Footer />
             </IonContent>
         </IonPage>
     );

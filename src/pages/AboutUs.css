@@ -1,112 +1,92 @@
-:root {
-    --ion-background-color: #fff;
-    --ion-text-color: #ffffff;
-}
-
-ion-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupar toda la altura de la pantalla */
-    background-color: #fff; /* Asegura un fondo blanco */
-}
-
-/* Contenedor principal que incluye contenido y footer */
 .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    --ion-background-color: #fff;
-    margin-top: 60px; /* Ajusta según la altura del navbar */
-    padding-top: 60px; /* Debe ser igual o mayor que la altura del Navbar */
+  background: linear-gradient(
+    0deg,
+    rgba(69, 11, 36, 1) 0%,
+    rgba(20, 8, 48, 1) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  color: white;
+  padding: 20px;
 }
 
-.main-content {
-    padding-bottom: 20px; /* Asegura espacio al final */
-}
-
-.hero {
-    width: 100%;
-    max-width: 800px;
+.main-content-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    rgba(69, 11, 36, 1) 0%,
+    rgba(20, 8, 48, 1) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  position: relative;
+  justify-content: center;
+  gap: 100px;
 }
 
 .hero h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fe006d;
+  text-shadow: 0 0 6px rgba(254, 0, 109, 0.7);
 }
 
-ion-list {
-    background-color: transparent !important;
+.team-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-ion-item {
-    --background: #f3f3f3 !important;
-    --border-radius: 5px;
-    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 5px 0px;
-    transition: transform 0.2s ease-in-out;
+.team-member {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  /* font-size: 50px; */
+  padding: 20px;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  transition: transform 0.3sease, box-shadow 0.3sease;
+  flex-direction: column;
+  justify-content: center;
 }
 
-ion-item:hover {
-    transform: translateY(-5px);
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(254, 0, 109, 0.5);
 }
 
-.item-member h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #222;
+.team-member h3 {
+  font-size: 34px;
+  font-weight: bold;
+  color: #fe006d;
+  margin-bottom: 10px;
 }
 
-ion-label {
-    padding: 13px;
+.team-member p {
+  font-size: 26px;
+  color: #d1d1d1;
+  margin: 5px 0;
 }
 
 .social-links {
-    margin-top: 10px;
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .social-links a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    margin-right: 15px;
-    transition: color 0.2s ease-in-out;
+  color: white;
+  text-decoration: none;
+  font-size: 70px;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #0056b3;
-}
-
-/* Footer */
-.footer {
-    background-color: black;
-    color: #f3f3f3;
-    text-align: center;
-    padding: 15px;
-    font-size: 15px;
-    width: 100%;
-    margin-top: 50px; /* Empuja el footer hacia abajo */
-}
-
-.footer p {
-    margin: 5px 0;
-}
-
-.footer-links {
-    margin-top: 10px;
-}
-
-.footer-links a {
-    color: #f3f3f3;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
-}
-
-.footer-links a:hover {
-    color: #007bff;
+  color: #fe006d;
 }
