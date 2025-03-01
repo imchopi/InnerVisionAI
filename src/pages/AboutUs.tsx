@@ -1,10 +1,18 @@
-import { IonPage, IonContent, IonModal, IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon } from "@ionic/react";
+import { IonPage, IonContent } from "@ionic/react";
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa"; // Íconos de GitHub y LinkedIn
-import { arrowBack } from "ionicons/icons"; // Ícono de flecha para volver atrás
 import "./AboutUs.css";
 
-const teamMembers = [
+// Definir la interfaz para los miembros del equipo
+interface TeamMember {
+    name: string;
+    role: string;
+    master: string;
+    github: string;
+    linkedin: string;
+}
+
+const teamMembers: TeamMember[] = [
     {
         name: "Carlos López Muñoz",
         role: "Desarrollador de IA y Big Data",
@@ -29,20 +37,6 @@ const teamMembers = [
 ];
 
 const AboutUs: React.FC = () => {
-    const [selectedMember, setSelectedMember] = useState(null); // Estado para el miembro seleccionado
-    const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
-
-    // Función para abrir el modal con la información del miembro
-    const openModal = (member) => {
-        setSelectedMember(member);
-        setIsModalOpen(true);
-    };
-
-    // Función para cerrar el modal
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedMember(null);
-    };
 
     return (
         <IonPage>
@@ -53,14 +47,10 @@ const AboutUs: React.FC = () => {
                     </div>
                     <div className="team-grid">
                         {teamMembers.map((member, index) => (
-                            <div className="team-member" key={index} onClick={() => openModal(member)}>
+                            <div className="team-member" key={index}>
                                 <h3>{member.name}</h3>
-                                <p>
-                                    {member.role}
-                                </p>
-                                <p>
-                                    {member.master}
-                                </p>
+                                <p>{member.role}</p>
+                                <p>{member.master}</p>
                                 <div className="social-links">
                                     <a
                                         href={member.github}
