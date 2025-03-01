@@ -17,23 +17,43 @@
 
 /* Título del chatbot */
 h2 {
-    font-size: 40px;
+    font-size: 60px; /* Más grande */
     font-weight: bold;
     color: #fe006d; /* Color del título */
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Más espacio */
 }
 
 /* Contenedor de los mensajes */
 .chat-container {
     width: 100%;
-    max-width: 600px;
-    height: 400px;
+    max-width: 1200px; /* Más ancho */
+    height: 800px; /* Más alto */
     overflow-y: auto;
     border: 2px solid #fe006d; /* Borde con color neón */
-    padding: 15px;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(254, 0, 109, 0.5); /* Sombra neón */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 0 20px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
+}
+
+/* Personalización del scrollbar */
+.chat-container::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Fondo del track */
+    border-radius: 10px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #fe006d; /* Color neón del thumb */
+    border-radius: 10px;
+    border: 2px solid rgba(254, 0, 109, 0.7); /* Borde neón */
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #d1005a; /* Color más oscuro al pasar el mouse */
 }
 
 /* Animación para los mensajes */
@@ -45,66 +65,66 @@ h2 {
 /* Estilo base para los mensajes */
 .message {
     animation: fadeIn 0.3s ease-in-out;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 20px;
+    padding: 20px 25px; /* Más grande */
+    margin: 15px 0; /* Más espacio */
+    border-radius: 25px; /* Bordes más redondeados */
     max-width: 80%;
     color: white;
-    font-size: 16px;
+    font-size: 24px; /* Texto más grande */
 }
 
 /* Mensajes del usuario (en azul neón) */
 .user {
     background-color: #007bff;
     align-self: flex-end;
-    border: 1px solid #0056b3;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra neón */
+    border: 2px solid #0056b3; /* Borde más grueso */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Sombra neón más grande */
 }
 
 /* Mensajes del chatbot (en rosa neón) */
 .bot {
     background-color: #fe006d;
     align-self: flex-start;
-    border: 1px solid #d1005a;
-    box-shadow: 0 0 10px rgba(254, 0, 109, 0.7); /* Sombra neón */
+    border: 2px solid #d1005a; /* Borde más grueso */
+    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
 }
 
 /* Contenedor del input y botón */
 .input-container {
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px; /* Más espacio */
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px; /* Más ancho */
 }
 
 /* Estilo del input de texto */
 input {
     flex: 1;
-    padding: 10px;
+    padding: 15px; /* Más grande */
     border: 2px solid #fe006d; /* Borde con color neón */
-    border-radius: 10px;
+    border-radius: 15px; /* Bordes más redondeados */
     background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
     color: white;
-    font-size: 16px;
+    font-size: 24px; /* Texto más grande */
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
     border: 2px solid #007bff; /* Cambio de color al enfocar */
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra neón */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Sombra neón más grande */
 }
 
 /* Estilo del botón de enviar */
 .send-button {
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 24px; /* Texto más grande */
+    padding: 15px 30px; /* Más grande */
     background-color: #fe006d; /* Color del botón */
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px; /* Bordes más redondeados */
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 15px; /* Más espacio */
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -112,5 +132,5 @@ input:focus {
 .send-button:hover {
     background-color: #d1005a; /* Color más oscuro al pasar el mouse */
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón */
+    box-shadow: 0 0 20px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
 }
