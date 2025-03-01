@@ -1,10 +1,26 @@
-/* Sección principal */
-
+/* Estilo principal del contenedor */
+.main-content-chatbot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(
+        0deg,
+        rgba(69, 11, 36, 1) 0%,
+        rgba(20, 8, 48, 1) 50%,
+        rgb(0, 0, 0) 100%
+    );
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 /* Título del chatbot */
 h2 {
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fe006d; /* Color del título */
+    margin-bottom: 20px;
 }
 
 /* Contenedor de los mensajes */
@@ -13,10 +29,11 @@ h2 {
     max-width: 600px;
     height: 400px;
     overflow-y: auto;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    border: 2px solid #fe006d; /* Borde con color neón */
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(254, 0, 109, 0.5); /* Sombra neón */
 }
 
 /* Animación para los mensajes */
@@ -28,29 +45,34 @@ h2 {
 /* Estilo base para los mensajes */
 .message {
     animation: fadeIn 0.3s ease-in-out;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 10px 15px;
+    margin: 10px 0;
     border-radius: 20px;
     max-width: 80%;
+    color: white;
+    font-size: 16px;
 }
 
-/* Mensajes del usuario (en azul, alineados a la derecha) */
+/* Mensajes del usuario (en azul neón) */
 .user {
     background-color: #007bff;
-    color: white;
     align-self: flex-end;
+    border: 1px solid #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra neón */
 }
 
-/* Mensajes del chatbot (en gris, alineados a la izquierda) */
+/* Mensajes del chatbot (en rosa neón) */
 .bot {
-    background-color: #393737;
+    background-color: #fe006d;
     align-self: flex-start;
+    border: 1px solid #d1005a;
+    box-shadow: 0 0 10px rgba(254, 0, 109, 0.7); /* Sombra neón */
 }
 
 /* Contenedor del input y botón */
 .input-container {
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
     max-width: 600px;
 }
@@ -59,39 +81,36 @@ h2 {
 input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #fe006d; /* Borde con color neón */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    color: white;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border: 2px solid #007bff; /* Cambio de color al enfocar */
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra neón */
 }
 
 /* Estilo del botón de enviar */
 .send-button {
     font-size: 16px;
-    padding: 10px 15px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: #fe006d; /* Color del botón */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-left: 10px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 /* Cambio de color al pasar el mouse sobre el botón */
 .send-button:hover {
-    background-color: #0056b3;
+    background-color: #d1005a; /* Color más oscuro al pasar el mouse */
     transform: scale(1.05);
-}
-
-/* Mejoras en el input */
-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border 0.3s ease;
-}
-
-input:focus {
-    border: 1px solid #007bff;
-    outline: none;
+    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón */
 }

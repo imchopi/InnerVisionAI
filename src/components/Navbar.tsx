@@ -19,9 +19,6 @@ const Navbar: React.FC = () => {
         <IonButton className="nav-button" routerLink="/chatbot">
           Chatbot
         </IonButton>
-        <IonButton className="nav-button" routerLink="/docs">
-          Docs
-        </IonButton>
       </div>
     </div>
   );

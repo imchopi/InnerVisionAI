@@ -1,60 +1,49 @@
-import { IonPage, IonHeader, IonContent } from "@ionic/react";
+import { IonPage, IonContent } from "@ionic/react";
 import React, { useState } from "react";
 import axios from "axios";
-import Footer from "../components/Footer";
 import "./Chatbot.css";
 
-
 const Chatbot: React.FC = () => {
-    // Estado para almacenar los mensajes del chat
     const [messages, setMessages] = useState([
-        { role: "bot", content: "¡Hola! Soy tu asistente virtual! Pregúntame sobre lo que sea acerca de InnerVisionAI." }
+        { role: "bot", content: "¡Hola! Soy tu asistente virtual. Pregúntame sobre lo que sea acerca de InnerVisionAI." }
     ]);
-    // Estado para manejar el texto del input del usuario
     const [input, setInput] = useState("");
 
-    // Función para formatear la respuesta del chatbot
     const formatResponse = (response: string) => {
-        return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Negritas a etiquetas HTML
-            .replace(/\n/g, '<br>') // Saltos de línea HTML
-            .replace(/\d+\. /g, '<br>• '); // Números por viñetas
+        return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n/g, '<br>')
+            .replace(/\d+\. /g, '<br>• ');
     };
 
-    // Función para manejar el envío de mensajes al chatbot
     const sendMessage = async () => {
-        if (!input.trim()) return; // No enviar si el input está vacío
+        if (!input.trim()) return;
 
-        // Agregar el mensaje del usuario a la lista de mensajes
         const userMessage = { role: "user", content: input };
         setMessages([...messages, userMessage]);
 
         try {
-            // Enviar el mensaje al backend (servidor en Node.js)
             const response = await axios.post("http://localhost:5000/chat", {
                 message: input,
             });
 
-            // Formatear la respuesta del chatbot
             const formattedContent = formatResponse(response.data.response);
-            // Agregar la respuesta del chatbot a la lista de mensajes
             const botMessage = { role: "bot", content: formattedContent };
             setMessages([...messages, userMessage, botMessage]);
         } catch (error) {
             console.error("Error al enviar el mensaje al chatbot:", error);
         }
 
-        // Limpiar el input del usuario después de enviar el mensaje
         setInput("");
     };
 
     return (
         <IonPage>
             <IonContent className="page-container" fullscreen>
-                <div className="main-content">
+                <div className="main-content-chatbot">
                     {/* Título del chatbot */}
-                    <h2>Chatbot</h2>
+                    <h2>Chatbot de InnerVisionAI</h2>
 
-                    {/* Contenedor donde se mostrarán los mensajes */}
+                    {/* Contenedor de mensajes */}
                     <div className="chat-container">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.role}`}>
@@ -67,7 +56,7 @@ const Chatbot: React.FC = () => {
                         ))}
                     </div>
 
-                    {/* Input y botón para enviar mensajes */}
+                    {/* Input y botón de enviar */}
                     <div className="input-container">
                         <input
                             type="text"

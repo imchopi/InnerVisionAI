@@ -67,9 +67,6 @@ const App: React.FC = () => (
         <Route exact path="/chatbot">
           <Chatbot />
         </Route>
-        <Route exact path="/docs">
-          <Docs />
-        </Route>
       </IonRouterOutlet>
       <Footer/>
     </IonReactRouter>
