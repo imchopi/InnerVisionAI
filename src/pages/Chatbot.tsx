@@ -12,7 +12,7 @@ const Chatbot: React.FC = () => {
     // Permitir tanto localhost como la URL de producción
     const API_URL = window.location.hostname === "localhost" 
         ? "http://localhost:5000" 
-        : "https://innervisionai.netlify.app"
+        : "https://innervisionai.netlify.app/chatbot"
 
     const formatResponse = (response: string) => {
         return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')

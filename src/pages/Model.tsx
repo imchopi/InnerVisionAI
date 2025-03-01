@@ -15,7 +15,7 @@ fixStatusBar();
 
 // Configuración dinámica de la URL del servidor
 const isProduction = process.env.NODE_ENV === 'production';
-const serverUrl = isProduction ? 'https://innervisionai.netlify.app' : 'http://localhost:5000';
+const serverUrl = isProduction ? 'https://innervisionai.netlify.app/model' : 'http://localhost:5000';
 
 // Conexión al backend con WebSockets
 const socket = io(serverUrl);
