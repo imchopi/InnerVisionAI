@@ -11,120 +11,94 @@
         rgba(20, 8, 48, 1) 50%,
         rgb(0, 0, 0) 100%
     );
-    padding: 20px;
+    padding: 20px; /* Espacio intermedio */
     box-sizing: border-box;
 }
 
 /* Título del chatbot */
 h2 {
-    font-size: 60px; /* Más grande */
+    font-size: 32px; /* Tamaño intermedio */
     font-weight: bold;
     color: #fe006d; /* Color del título */
-    margin-bottom: 30px; /* Más espacio */
+    margin-bottom: 15px; /* Espacio intermedio */
 }
 
 /* Contenedor de los mensajes */
 .chat-container {
-    width: 100%;
-    max-width: 1200px; /* Más ancho */
-    height: 800px; /* Más alto */
+    width: 90%; /* Ancho intermedio */
+    max-width: 1000px; /* Doble de ancho (antes era 500px) */
+    height: 400px; /* Altura intermedia */
     overflow-y: auto;
     border: 2px solid #fe006d; /* Borde con color neón */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    border-radius: 20px; /* Bordes más redondeados */
-    box-shadow: 0 0 20px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
-}
-
-/* Personalización del scrollbar */
-.chat-container::-webkit-scrollbar {
-    width: 12px; /* Ancho del scrollbar */
-}
-
-.chat-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* Fondo del track */
-    border-radius: 10px;
-}
-
-.chat-container::-webkit-scrollbar-thumb {
-    background: #fe006d; /* Color neón del thumb */
-    border-radius: 10px;
-    border: 2px solid rgba(254, 0, 109, 0.7); /* Borde neón */
-}
-
-.chat-container::-webkit-scrollbar-thumb:hover {
-    background: #d1005a; /* Color más oscuro al pasar el mouse */
-}
-
-/* Animación para los mensajes */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    padding: 15px; /* Espacio intermedio */
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo más transparente */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón intermedia */
 }
 
 /* Estilo base para los mensajes */
 .message {
-    animation: fadeIn 0.3s ease-in-out;
-    padding: 20px 25px; /* Más grande */
-    margin: 15px 0; /* Más espacio */
-    border-radius: 25px; /* Bordes más redondeados */
+    padding: 10px 15px; /* Espacio intermedio */
+    margin: 8px 0; /* Espacio intermedio */
+    border-radius: 20px; /* Bordes más redondeados */
     max-width: 80%;
     color: white;
-    font-size: 24px; /* Texto más grande */
+    font-size: 16px; /* Texto intermedio */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo más transparente */
 }
 
 /* Mensajes del usuario (en azul neón) */
 .user {
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.2); /* Fondo más transparente */
     align-self: flex-end;
-    border: 2px solid #0056b3; /* Borde más grueso */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Sombra neón más grande */
+    border: 2px solid #0056b3; /* Borde intermedio */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Sombra menos intensa */
 }
 
 /* Mensajes del chatbot (en rosa neón) */
 .bot {
-    background-color: #fe006d;
+    background-color: rgba(254, 0, 109, 0.2); /* Fondo más transparente */
     align-self: flex-start;
-    border: 2px solid #d1005a; /* Borde más grueso */
-    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
+    border: 2px solid #d1005a; /* Borde intermedio */
+    box-shadow: 0 0 10px rgba(254, 0, 109, 0.5); /* Sombra menos intensa */
 }
 
 /* Contenedor del input y botón */
 .input-container {
     display: flex;
-    margin-top: 30px; /* Más espacio */
-    width: 100%;
-    max-width: 1200px; /* Más ancho */
+    margin-top: 15px; /* Espacio intermedio */
+    width: 90%; /* Ancho intermedio */
+    max-width: 1000px; /* Doble de ancho (antes era 500px) */
 }
 
 /* Estilo del input de texto */
 input {
     flex: 1;
-    padding: 15px; /* Más grande */
-    border: 2px solid #fe006d; /* Borde con color neón */
-    border-radius: 15px; /* Bordes más redondeados */
+    padding: 10px; /* Espacio intermedio */
+    border: 2px solid #fe006d; /* Borde intermedio */
+    border-radius: 10px; /* Bordes más redondeados */
     background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
     color: white;
-    font-size: 24px; /* Texto más grande */
+    font-size: 16px; /* Texto intermedio */
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
     border: 2px solid #007bff; /* Cambio de color al enfocar */
     outline: none;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Sombra neón más grande */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra neón intermedia */
 }
 
 /* Estilo del botón de enviar */
 .send-button {
-    font-size: 24px; /* Texto más grande */
-    padding: 15px 30px; /* Más grande */
+    font-size: 16px; /* Texto intermedio */
+    padding: 10px 20px; /* Espacio intermedio */
     background-color: #fe006d; /* Color del botón */
     color: white;
     border: none;
-    border-radius: 15px; /* Bordes más redondeados */
+    border-radius: 10px; /* Bordes más redondeados */
     cursor: pointer;
-    margin-left: 15px; /* Más espacio */
+    margin-left: 10px; /* Espacio intermedio */
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -132,5 +106,25 @@ input:focus {
 .send-button:hover {
     background-color: #d1005a; /* Color más oscuro al pasar el mouse */
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(254, 0, 109, 0.7); /* Sombra neón más grande */
+    box-shadow: 0 0 15px rgba(254, 0, 109, 0.7); /* Sombra neón intermedia */
+}
+
+/* Personalización de la barra de desplazamiento */
+.chat-container::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Fondo de la pista */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #fe006d; /* Color de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid rgba(254, 0, 109, 0.5); /* Borde con transparencia */
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #d1005a; /* Color al pasar el mouse */
 }

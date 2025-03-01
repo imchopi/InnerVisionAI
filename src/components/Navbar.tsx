@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar: React.FC = () => {
   return (
     <div className="navbar">
-      <IonTitle className="logo">InnerVision</IonTitle>
+      <IonTitle className="logo">InnerVisionAI</IonTitle>
       <div className="nav-buttons">
         <IonButton className="nav-button" routerLink="/">
           Inicio

@@ -9,6 +9,11 @@ const Chatbot: React.FC = () => {
     ]);
     const [input, setInput] = useState("");
 
+    // Permitir tanto localhost como la URL de producción
+    const API_URL = window.location.hostname === "localhost" 
+        ? "http://localhost:5000" 
+        : "https://innervisionai.netlify.app"
+
     const formatResponse = (response: string) => {
         return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>')
@@ -22,7 +27,8 @@ const Chatbot: React.FC = () => {
         setMessages([...messages, userMessage]);
 
         try {
-            const response = await axios.post("http://localhost:5000/chat", {
+            // Usar la URL de la API dinámicamente
+            const response = await axios.post(`${API_URL}/chat`, {
                 message: input,
             });
 

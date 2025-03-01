@@ -51,23 +51,14 @@ const App: React.FC = () => (
       </IonHeader>
 
       <IonRouterOutlet>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/model">
-          <Model />
-        </Route>
-        <Route exact path="/aboutus">
-          <AboutUs />
-        </Route>
-        <Route exact path="/chatbot">
-          <Chatbot />
-        </Route>
+        {/* Define las rutas */}
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/model" component={Model} />
+        <Route exact path="/chatbot" component={Chatbot} />
+        <Route exact path="/aboutUs" component={AboutUs} />
+        <Redirect exact from="/" to="/home" />
       </IonRouterOutlet>
-      <Footer/>
+      <Footer />
     </IonReactRouter>
   </IonApp>
 );

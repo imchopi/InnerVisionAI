@@ -8,10 +8,10 @@
   justify-content: space-evenly;
   text-align: center;
   background: linear-gradient(
-    0deg,
-    rgba(69, 11, 36, 1) 0%,
-    rgba(20, 8, 48, 1) 50%,
-    rgb(0, 0, 0) 100%
+      0deg,
+      rgba(69, 11, 36, 1) 0%,
+      rgba(20, 8, 48, 1) 50%,
+      rgb(0, 0, 0) 100%
   );
   position: relative;
 }
@@ -20,36 +20,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  h1 {
-    font-size: 70px;
-    font-weight: bold;
-    color: #fe006d;
-    margin-bottom: 10px;
-  }
+.hero h1 {
+  font-size: 50px; /* Tamaño más pequeño */
+  font-weight: bold;
+  color: #fe006d;
+  margin-bottom: 10px;
+}
 
-  p {
-    font-size: 30px;
-    color: #d1d1d1;
-    max-width: 600px;
-    line-height: 1.5;
-  }
+.hero p {
+  font-size: 24px; /* Tamaño más pequeño */
+  color: #d1d1d1;
+  max-width: 500px; /* Ancho más pequeño */
+  line-height: 1.5;
 }
 
 .github-links {
   display: flex;
-  gap: 30px;
+  gap: 20px; /* Menos espacio entre enlaces */
 }
 
 .github-link {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px; /* Menos espacio entre ícono y texto */
   text-decoration: none;
   color: #d1d1d1;
-  font-size: 20px;
-  transition: all 0.5s ease; /* Transición suave para todos los cambios */
+  font-size: 18px; /* Tamaño más pequeño */
+  transition: all 0.5s ease;
 }
 
 .github-link:hover {
@@ -57,20 +57,20 @@
 }
 
 .github-link svg {
-  transition: all 0.5s ease; /* Transición suave para el ícono */
+  transition: all 0.5s ease;
 }
 
 .github-link:hover svg {
-  transform: scale(1.2) rotate(15deg); /* Escala y rotación al pasar el mouse */
-  filter: drop-shadow(0 0 10px rgba(254, 0, 109, 0.7)); /* Sombra neón */
+  transform: scale(1.1) rotate(10deg); /* Efecto más sutil */
+  filter: drop-shadow(0 0 8px rgba(254, 0, 109, 0.7)); /* Sombra menos intensa */
 }
 
 .github-link span {
-  font-size: 40px;
-  transition: all 0.5s ease; /* Transición suave para el texto */
+  font-size: 30px; /* Tamaño más pequeño */
+  transition: all 0.5s ease;
 }
 
 .github-link:hover span {
-  transform: translateY(-10px); /* Mueve el texto hacia arriba */
-  color: #fe006d; /* Cambia el color del texto */
+  transform: translateY(-5px); /* Movimiento más sutil */
+  color: #fe006d;
 }
