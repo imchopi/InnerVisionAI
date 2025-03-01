@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Model from "./pages/Model";
 import AboutUs from './pages/AboutUs';
 import Chatbot from './pages/Chatbot';
-import Docs from './pages/Docs';
 import Navbar from "./components/Navbar";
 
 /* Core CSS required for Ionic components to work properly */
