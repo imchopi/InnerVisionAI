@@ -1,22 +1,76 @@
-/* Contenedor principal */
-.video-container {
-    position: relative;
-    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-    height: 100vh; /* Ocupa el 100% del alto de la ventana */
-    overflow: hidden;
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(
+      0deg,
+      rgba(69, 11, 36, 1) 0%,
+      rgba(20, 8, 48, 1) 50%,
+      rgb(0, 0, 0) 100%
+  );
+  position: relative;
 }
 
-/* Video y canvas */
-video, canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Canvas (superpuesto sobre el video) */
-canvas {
-    z-index: 1;
+.hero h1 {
+  font-size: 50px; /* Tamaño más pequeño */
+  font-weight: bold;
+  color: #fe006d;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 24px; /* Tamaño más pequeño */
+  color: #d1d1d1;
+  max-width: 500px; /* Ancho más pequeño */
+  line-height: 1.5;
+}
+
+.github-links {
+  display: flex;
+  gap: 20px; /* Menos espacio entre enlaces */
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px; /* Menos espacio entre ícono y texto */
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 18px; /* Tamaño más pequeño */
+  transition: all 0.5s ease;
+}
+
+.github-link:hover {
+  color: #fe006d;
+}
+
+.github-link svg {
+  transition: all 0.5s ease;
+}
+
+.github-link:hover svg {
+  transform: scale(1.1) rotate(10deg); /* Efecto más sutil */
+  filter: drop-shadow(0 0 8px rgba(254, 0, 109, 0.7)); /* Sombra menos intensa */
+}
+
+.github-link span {
+  font-size: 30px; /* Tamaño más pequeño */
+  transition: all 0.5s ease;
+}
+
+.github-link:hover span {
+  transform: translateY(-5px); /* Movimiento más sutil */
+  color: #fe006d;
 }

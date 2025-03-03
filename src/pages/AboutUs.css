@@ -1,0 +1,92 @@
+/* Estilo principal del contenedor */
+.page-container {
+  background: linear-gradient(
+    0deg,
+    rgba(69, 11, 36, 1) 0%,
+    rgba(20, 8, 48, 1) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  color: white;
+  padding: 20px;
+}
+
+.main-content-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    rgba(69, 11, 36, 1) 0%,
+    rgba(20, 8, 48, 1) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  position: relative;
+  justify-content: center;
+  gap: 50px; /* Menos espacio entre el título y las tarjetas */
+}
+
+.hero h2 {
+  font-size: 48px; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  color: #fe006d;
+  text-shadow: 0 0 6px rgba(254, 0, 109, 0.7);
+}
+
+.team-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px; /* Menos espacio interno */
+  width: 400px; /* Ancho más pequeño */
+  height: 400px; /* Altura más pequeña */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(254, 0, 109, 0.5);
+}
+
+.team-member h3 {
+  font-size: 28px; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  color: #fe006d;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  font-size: 20px; /* Tamaño de fuente más pequeño */
+  color: #d1d1d1;
+  margin: 5px 0;
+}
+
+.social-links {
+  margin-top: 30px; /* Menos espacio superior */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 50px; /* Tamaño de ícono más pequeño */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fe006d;
+}
