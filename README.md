@@ -27,6 +27,8 @@ Como el tiempo que tuvimos era limitado y era muy ambicioso, nos vimos en la obl
 
 ### **Presentación en formato PDF**
 
+[InnerVisionAI.pdf](https://github.com/user-attachments/files/19059032/InnerVisionAI.pdf)
+
 [CANVAS](https://www.canva.com/design/DAGghJUTLyQ/ZZKpm5k1CVVnxM2wO5-TVQ/edit?utm_content=DAGghJUTLyQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### **Enlace a la aplicación web**
