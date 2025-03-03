@@ -36,7 +36,6 @@ const Home: React.FC = () => {
       </IonContent>
     </IonPage>
   );
-
 };
 
 export default Home;

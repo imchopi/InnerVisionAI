@@ -1778,7 +1778,7 @@ La parte del frontend será expuesta en la sección **8. Desarrollo de la Aplica
 
 ![api_rest](https://github.com/user-attachments/assets/1045acd4-a22b-44f2-ae54-376e16ca642e)
 
-Vemos aquí más directamente la parte importante, que usará el rol de system, con lo cual nos permite generar un prompt anterior al prompt del usuario, donde gracias a esta función, transformamos el readme...
+Vemos aquí mas directamente la parte importante, que usará el rol de system, con lo cual nos permite generar un prompt anterior al promt del usuario, donde gracias a esta función, transformamos el readme...
 ![readme](https://github.com/user-attachments/assets/fc3a12d0-7bfc-4919-8424-545b98158e73)
 
 Para conseguir así finalmente que "sesgemos" al modelo para que responda preguntas con base en nuestro Readme.
@@ -1967,7 +1967,7 @@ Aplicar un fondo con degradado.
 
 ✨ **Vista del modelo de detección de objetos:**
 
-![image](https://github.com/user-attachments/assets/51eb8200-78ca-4e1a-87f6-5135d48ce88e)
+![image](https://github.com/user-attachments/assets/0ca68b6f-3eab-4103-adc5-16d4345aa22f)
 
 
 Con esta implementación logramos un procesamiento ágil y preciso, permitiendo a los usuarios identificar objetos en tiempo real de manera intuitiva y eficaz. 🎯
