@@ -1967,7 +1967,8 @@ Aplicar un fondo con degradado.
 
 ✨ **Vista del modelo de detección de objetos:**
 
-[Imagen del modelo funcionando]
+![image](https://github.com/user-attachments/assets/51eb8200-78ca-4e1a-87f6-5135d48ce88e)
+
 
 Con esta implementación logramos un procesamiento ágil y preciso, permitiendo a los usuarios identificar objetos en tiempo real de manera intuitiva y eficaz. 🎯
 
