@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <div className="navbar">
       <IonTitle className="logo">InnerVisionAI</IonTitle>
       <div className="nav-buttons">
-        <IonButton className="nav-button" routerLink="/">
+        <IonButton className="nav-button" routerLink="/home">
           Inicio
         </IonButton>
         <IonButton className="nav-button" routerLink="/model">
