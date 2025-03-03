@@ -1778,7 +1778,7 @@ La parte del frontend será expuesta en la sección **8. Desarrollo de la Aplica
 
 ![api_rest](https://github.com/user-attachments/assets/1045acd4-a22b-44f2-ae54-376e16ca642e)
 
-Vemos aquí mas directamente la parte importante, que usará el rol de system, con lo cual nos permite generar un prompt anterior al promt del usuario, donde gracias a esta función, transformamos el readme...
+Vemos aquí más directamente la parte importante, que usará el rol de system, con lo cual nos permite generar un prompt anterior al prompt del usuario, donde gracias a esta función, transformamos el readme...
 ![readme](https://github.com/user-attachments/assets/fc3a12d0-7bfc-4919-8424-545b98158e73)
 
 Para conseguir así finalmente que "sesgemos" al modelo para que responda preguntas con base en nuestro Readme.
