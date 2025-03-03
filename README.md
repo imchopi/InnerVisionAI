@@ -7,7 +7,8 @@
 
 ### **Título**
 
-InnerVisionAI
+![image](https://github.com/user-attachments/assets/bbe87bcf-e2fa-4f2c-9f76-ba2a265287d9)
+
 
 ### **Descripción**
 
